@@ -1,0 +1,255 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5;
+            min-height: 100vh;
+        }
+        
+        /* Navbar */
+        .navbar {
+            background: #2c3e50;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .navbar h1 {
+            font-size: 20px;
+        }
+        
+        .navbar .user-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .navbar .role-badge {
+            background: #3498db;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .navbar .logout-btn {
+            background: #e74c3c;
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        
+        .navbar .logout-btn:hover {
+            background: #c0392b;
+        }
+        
+        /* Container utama */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        
+        /* Welcome Card */
+        .welcome-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .welcome-card h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .welcome-card p {
+            opacity: 0.9;
+        }
+        
+        /* Grid menu untuk user biasa */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .menu-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: block;
+        }
+        
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .menu-card .icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        .menu-card h3 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .menu-card p {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        /* Admin Panel */
+        .admin-panel {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f2f5;
+        }
+        
+        .admin-header h2 {
+            color: #2c3e50;
+        }
+        
+        .btn-primary {
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            background: #2980b9;
+        }
+        
+        .btn-danger {
+            background: #e74c3c;
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+        
+        .btn-danger:hover {
+            background: #c0392b;
+        }
+        
+        .user-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        .user-table th,
+        .user-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .user-table th {
+            background: #f8f9fa;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        .user-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .role-badge-small {
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        
+        .role-admin {
+            background: #e74c3c;
+            color: white;
+        }
+        
+        .role-manager {
+            background: #3498db;
+            color: white;
+        }
+        
+        .role-user {
+            background: #27ae60;
+            color: white;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .edit-btn {
+            background: #f39c12;
+            color: white;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 3px;
+            font-size: 11px;
+        }
+        
+        .delete-btn {
+            background: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 3px;
+            font-size: 11px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .edit-btn:hover {
+            background: #e67e22;
+        }
+        
+        .delete-btn:hover {
+            background: #c0392b;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+        }
