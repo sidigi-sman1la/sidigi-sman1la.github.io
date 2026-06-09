@@ -1,11 +1,11 @@
 <?php
 session_start();
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: pages/auth/login.php");
     exit;
 }
 
-include 'connection.php';
+include 'config/connection.php';
 
 // Ambil role dari session
 $role = $_SESSION['role'];
@@ -16,8 +16,8 @@ $nama = $_SESSION['nama'];
 <html>
 <head>
     <title>Dashboard | Absensi Digital</title>
-    <link rel="stylesheet" href="Style/dashboardStyle.css">
-    <link rel="icon" href="Assets/smansalaLogo.png">
+    <link rel="stylesheet" href="assets/style/dashboardStyle.css">
+    <link rel="icon" href="assets/image/smansalaLogo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
 </head>
 <body>
@@ -38,7 +38,7 @@ $nama = $_SESSION['nama'];
                     else echo "Pengguna";
                 ?>
             </span>
-            <a href="logout.php" class="logout-btn">Logout</a>
+            <a href="pages/auth/logout.php" class="logout-btn">Logout</a>
         </div>
     </div>
 </div>
@@ -64,7 +64,7 @@ $nama = $_SESSION['nama'];
         <div class="admin-panel">
             <div class="admin-header">
                 <h2>Panel Admin</h2>
-                <a href="addUser.php" class="btn-primary">+ Tambah User Baru</a>
+                <a href="pages/userProcess/addUser.php" class="btn-primary">+ Tambah User Baru</a>
             </div>
             
             <h3>Daftar Seluruh Pengguna</h3>
@@ -97,7 +97,7 @@ $nama = $_SESSION['nama'];
                                 </span>
                             </td>
                             <td class="action-buttons">
-                                <a href="editUser.php?id=<?php echo $user['id']; ?>" class="edit-btn">Edit</a>
+                                <a href="pages/userProcess/editUser.php?id=<?php echo $user['id']; ?>" class="edit-btn">Edit</a>
                                 <button onclick="deleteUser(<?php echo $user['id']; ?>)" class="delete-btn">Hapus</button>
                             </td>
                         </tr>
@@ -111,21 +111,21 @@ $nama = $_SESSION['nama'];
         </div>
         
         <div class="menu-grid">
-            <a href="rekapAbsensi.php" class="menu-card">
+            <a href="pages/absensiProcess/rekapAbsensi.php" class="menu-card">
                 <div class="icon">📊</div>
                 <div>
                     <h3>Rekap Absensi</h3>
                     <p>Lihat laporan kehadiran</p>
                 </div>
             </a>
-            <a href="report.php" class="menu-card">
+            <a href="pages/absensiProcess/report.php" class="menu-card">
                 <div class="icon">📈</div>
                 <div>
                     <h3>Laporan</h3>
                     <p>Export laporan ke Excel/PDF</p>
                 </div>
             </a>
-            <a href="pengaturan.php" class="menu-card">
+            <a href="#" class="menu-card">
                 <div class="icon">⚙️</div>
                 <div>
                     <h3>Pengaturan</h3>
@@ -139,7 +139,7 @@ $nama = $_SESSION['nama'];
         <div class="admin-panel">
             <div class="admin-header">
                 <h2>Panel Manager</h2>
-                <a href="addUser.php" class="btn-primary">+ Tambah User</a>
+                <a href="pages/userProcess/addUser.php" class="btn-primary">+ Tambah User</a>
             </div>
             
             <h3>Daftar User (Non-Admin)</h3>
@@ -181,14 +181,14 @@ $nama = $_SESSION['nama'];
         </div>
         
         <div class="menu-grid">
-            <a href="rekapAbsensi.php" class="menu-card">
+            <a href="pages/absensiProcess/rekapAbsensi.php" class="menu-card">
                 <div class="icon">📊</div>
                 <div>
                     <h3>Rekap Absensi</h3>
                     <p>Lihat laporan kehadiran</p>
                 </div>
             </a>
-            <a href="laporan.php" class="menu-card">
+            <a href="pages/absensiProcess/report.php" class="menu-card">
                 <div class="icon">📈</div>
                 <div>
                     <h3>Laporan</h3>
@@ -200,21 +200,21 @@ $nama = $_SESSION['nama'];
     <?php else: ?>
         
         <div class="menu-grid">
-            <a href="absen_process.php" class="menu-card">
+            <a href="pages/absensiProcess/absenProcess.php" class="menu-card">
                 <div class="icon">📝</div>
                 <div>
                     <h3>Absensi</h3>
                     <p>Lakukan absensi masuk/pulang</p>
                 </div>
             </a>
-            <a href="riwayatAbsensi.php" class="menu-card">
+            <a href="pages/absensiProcess/riwayatAbsensi.php" class="menu-card">
                 <div class="icon">📜</div>
                 <div>
                     <h3>Riwayat Absensi</h3>
                     <p>Lihat riwayat kehadiran Anda</p>
                 </div>
             </a>
-            <a href="profil.php" class="menu-card">
+            <a href="pages/userProcess/profile.php" class="menu-card">
                 <div class="icon">👤</div>
                 <div>
                     <h3>Profil Saya</h3>
@@ -262,7 +262,7 @@ updateClock();
 
 function deleteUser(id) {
     if (confirm('Apakah Anda yakin ingin menghapus user ini?')) {
-        window.location.href = 'deleteUser.php?id=' + id;
+        window.location.href = 'pages/userProcess/deleteUser.php?id=' + id;
     }
 }
 </script>

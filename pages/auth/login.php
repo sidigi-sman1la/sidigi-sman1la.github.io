@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'connection.php';
+include '../../config/connection.php';
 
 $error = '';
 
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['email'] = $data['email'];
                 $_SESSION['kelas'] = $data['kelas'] ?? '';
                 
-                header("Location: index.php");
+                header("Location: ../../index.php");
                 exit();
             } else {
                 $error = "Login gagal! Email atau password salah.";
@@ -42,8 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Login | SIASMANSALAA - SMA Negeri 1 Lemahabang</title>
-    <link rel="icon" href="Assets/smansalaLogo.png">
+    <title>Masuk | Sidigi Smansala</title>
+    <link rel="icon" href="../../assets/image/smansalaLogo.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -363,7 +363,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- LEFT SIDE - FORM LOGIN -->
     <div class="login-section">
         <div class="logo-area">
-            <img src="Assets/smansalaLogo.png" alt="Logo SMAN LAA">
+            <img src="../../assets/image/smansalaLogo.png" alt="Logo SMAN LAA">
             <h3>Absensi Digital<br>SMA Negeri 1 Lemahabang</h3>
         </div>
         
@@ -410,7 +410,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
         
         <div class="register-link">
-            Belum punya akun? <a href="register.php">Daftar di sini</a>
+            Belum punya akun? <a href="../userProcess/addUser.php">Daftar di sini</a>
         </div>
     </div>
     

@@ -1,10 +1,10 @@
 <?php
 session_start();
-include 'connection.php';
+include '../../config/connection.php';
 
 // ================== CEK LOGIN ==================
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: ../../auth/login.php");
     exit;
 }
 

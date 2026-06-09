@@ -1,11 +1,11 @@
 <?php
 session_start();
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: ../../auth/login.php");
     exit;
 }
 
-include 'connection.php';
+include '../../config/connection.php';
 
 $user_id = $_SESSION['user_id'];
 $nama = $_SESSION['nama'];
@@ -57,7 +57,7 @@ if (!$stats) {
 <html>
 <head>
     <title>Riwayat | Absensi Digital</title>
-    <link rel="icon" href="Assets/smansalaLogo.png">
+    <link rel="icon" href="../../assets/image/smansalaLogo.png">
     <style>
         /* ========================================
            RESET & BASE STYLES
@@ -647,7 +647,7 @@ if (!$stats) {
     </div>
     <?php endif; ?>
     
-    <a href="dashboard.php" class="btn-back">← Kembali ke Dashboard</a>
+    <a href="../../index.php" class="btn-back">← Kembali ke Dashboard</a>
 </div>
 
 </body>

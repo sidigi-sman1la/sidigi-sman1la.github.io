@@ -37,7 +37,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #0031d1d0 0%, #003ce2 100%);
             color: white;
             padding: 25px 30px;
             border-radius: 15px;
@@ -70,7 +70,7 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 15px;
-            background: #2c3e50;
+            background: linear-gradient(135deg, #0031d1d0 0%, #003ce2 100%);
             color: white;
             padding: 15px 30px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);

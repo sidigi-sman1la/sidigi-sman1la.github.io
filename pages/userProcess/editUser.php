@@ -1,11 +1,11 @@
 <?php
 session_start();
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
-    header("Location: index.php");
+    header("Location: ../../index.php");
     exit;
 }
 
-include 'connection.php';
+include '../../config/connection.php';
 
 $error = '';
 $success = '';
@@ -15,7 +15,7 @@ $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
 // Jika tidak ada ID, redirect
 if ($id == 0) {
-    header("Location: index.php");
+    header("Location: ../../index.php");
     exit;
 }
 
@@ -26,7 +26,7 @@ $user = mysqli_fetch_assoc($result);
 
 // Jika user tidak ditemukan
 if (!$user) {
-    header("Location: index.php");
+    header("Location: ../../index.php");
     exit;
 }
 
@@ -74,8 +74,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html>
 <head>
     <title>Edit User - Absensi Digital</title>
-    <link rel="stylesheet" href="Style/dashboard_style.css">
-    <link rel="icon" href="Assets/smansalaLogo.ico">
+    <link rel="stylesheet" href="../../assets/style/dashboardStyle.css">
+    <link rel="icon" href="../../assets/image/smansalaLogo.ico">
     <style>
         .form-container {
             max-width: 500px;
@@ -178,7 +178,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="alert alert-success">
             <?php echo htmlspecialchars($success); ?>
             <br><br>
-            <a href="index.php" style="color: #155724; font-weight: bold;">← Kembali ke Dashboard</a>
+            <a href="../../index.php" style="color: #155724; font-weight: bold;">← Kembali ke Dashboard</a>
         </div>
     <?php endif; ?>
     
@@ -209,7 +209,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
         
         <button type="submit" class="btn-save">💾 Simpan Perubahan</button>
-        <a href="index.php" class="btn-cancel">← Batal</a>
+        <a href="../../index.php" class="btn-cancel">← Batal</a>
     </form>
 </div>
 

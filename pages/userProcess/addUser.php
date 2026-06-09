@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'connection.php';
+include '../../config/connection.php';
 
 $error = '';
 $success = '';
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (mysqli_query($conn, $query)) {
                 $success = "User berhasil ditambahkan!";
                 // Optional: reset form setelah sukses
-                // echo "<script>setTimeout(function(){ window.location.href='index.php'; }, 2000);</script>";
+                // echo "<script>setTimeout(function(){ window.location.href='../../index.php'; }, 2000);</script>";
             } else {
                 $error = "Gagal menyimpan: " . mysqli_error($conn);
             }
@@ -42,8 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tambah User - Absensi</title>
-    <link rel="icon" href="Assets/smansalaLogo.png">
+    <title>Registrasi | Sidigi Smansala</title>
+    <link rel="icon" href="../../assets/image/smansalaLogo.png">
     <link rel="stylesheet" href="style.css">
     <style>
         body {
@@ -147,7 +147,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="alert alert-success">
             <?php echo htmlspecialchars($success); ?>
             <br><br>
-            <a href="index.php" style="color: #155724; font-weight: bold;">Kembali ke Dashboard</a>
+            <a href="../../index.php" style="color: #155724; font-weight: bold;">Kembali ke Dashboard</a>
         </div>
     <?php endif; ?>
     
@@ -177,7 +177,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit">Simpan User</button>
         </form>
         
-        <a href="index.php" class="btn-back">← Kembali ke Dashboard</a>
+        <a href="../../index.php" class="btn-back">← Kembali ke Dashboard</a>
     <?php endif; ?>
 </div>
 

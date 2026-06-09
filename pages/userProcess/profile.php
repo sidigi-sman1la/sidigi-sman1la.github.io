@@ -5,7 +5,7 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-include 'connection.php';
+include '../../config/connection.php';
 
 $user_id = $_SESSION['user_id'];
 $error = '';
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             overflow: hidden;
         }
         .profile-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #0031d1d0 0%, #003ce2 100%);
             color: white;
             padding: 30px;
             text-align: center;
@@ -123,10 +123,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         input:focus {
             outline: none;
-            border-color: #667eea;
+            background: linear-gradient(135deg, #0031d1d0 0%, #003ce2 100%);
         }
         .btn-save {
-            background: #667eea;
+            background: linear-gradient(135deg, #0031d1d0 0%, #003ce2 100%);
             color: white;
             padding: 12px 20px;
             border: none;
@@ -136,7 +136,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             width: 100%;
         }
         .btn-save:hover {
-            background: #5a67d8;
+            background: linear-gradient(135deg, #003ce2 0%, #0031d1d0 100%);
         }
         .btn-back {
             display: inline-block;
@@ -231,7 +231,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit" class="btn-save">💾 Simpan Perubahan</button>
         </form>
         
-        <a href="dashboard.php" class="btn-back">← Kembali ke Dashboard</a>
+        <a href="../../index.php" class="btn-back">← Kembali ke Dashboard</a>
     </div>
 </div>
 

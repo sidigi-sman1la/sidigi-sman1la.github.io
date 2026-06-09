@@ -2,11 +2,11 @@
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: ../../auth/login.php");
     exit;
 }
 
-include 'connection.php';
+include '../../config/connection.php';
 
 // ================== PROSES ABSENSI ==================
 $error = '';
@@ -208,8 +208,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <head>
     <title>Absensi Digital</title>
-    <link rel="icon" href="Assets/smansalaLogo.png">
-    <link rel="stylesheet" href="Style/absenStyle.css">
+    <link rel="icon" href="../../assets/image/smansalaLogo.png">
+    <link rel="stylesheet" href="../../assets/style/absenStyle.css">
 </head>
 
 <body>
@@ -258,7 +258,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </button>
 
     </form>
-    <a href="index.php" class="btn-back">← Kembali ke Dashboard</a>
+    <a href="../../index.php" class="btn-back">← Kembali ke Dashboard</a>
 </div>
 
 <script>
