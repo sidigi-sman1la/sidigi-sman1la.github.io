@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['email'] = $data['email'];
                 $_SESSION['kelas'] = $data['kelas'] ?? '';
                 
-                header("Location: dashboard.php");
+                header("Location: index.php");
                 exit();
             } else {
                 $error = "Login gagal! Email atau password salah.";

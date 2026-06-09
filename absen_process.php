@@ -258,7 +258,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </button>
 
     </form>
-    <a href="dashboard.php" class="btn-back">← Kembali ke Dashboard</a>
+    <a href="index.php" class="btn-back">← Kembali ke Dashboard</a>
 </div>
 
 <script>

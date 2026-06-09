@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (mysqli_query($conn, $query)) {
                 $success = "User berhasil ditambahkan!";
                 // Optional: reset form setelah sukses
-                // echo "<script>setTimeout(function(){ window.location.href='dashboard.php'; }, 2000);</script>";
+                // echo "<script>setTimeout(function(){ window.location.href='index.php'; }, 2000);</script>";
             } else {
                 $error = "Gagal menyimpan: " . mysqli_error($conn);
             }
@@ -147,7 +147,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="alert alert-success">
             <?php echo htmlspecialchars($success); ?>
             <br><br>
-            <a href="dashboard.php" style="color: #155724; font-weight: bold;">Kembali ke Dashboard</a>
+            <a href="index.php" style="color: #155724; font-weight: bold;">Kembali ke Dashboard</a>
         </div>
     <?php endif; ?>
     
@@ -177,7 +177,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit">Simpan User</button>
         </form>
         
-        <a href="dashboard.php" class="btn-back">← Kembali ke Dashboard</a>
+        <a href="index.php" class="btn-back">← Kembali ke Dashboard</a>
     <?php endif; ?>
 </div>
 
